@@ -1,0 +1,161 @@
+v1.6.5:
+Bryan\CFB_calc_data.m
+	commented out calculation of weekly strengths and SDs
+	corrected calculation of GP for FCS teams
+
+v1.6.4:
+Base\CFB_download.m
+	changed order of scores and stats downloadin' so that CFB_calc has scores to calc
+Bryan\CFB_calc_data.m
+	removed lines of code that neglected week 1 stats (in attempt to neglect week 0 stats)
+Bryan\CFB_calc_rankings.m
+	told stds to grab the right column whenever we get this working
+
+v1.6.3:
+Bryan\CFB_predict_games.m
+	added parens so that home field adv. is applied correctly when away team is predicted to win
+
+
+v1.6.2
+.\teamStatNames.cfb
+	re-added and trimmed for Arthur\ stuff until model is redone
+Arthur\CFB_find_features.m
+	removed stats that no longer exist
+Base\CFB_print_stats.m
+	prints team passing efficiency and team passing efficiency defense
+Bryan\CFB_predict_games.m
+	removed 'interest' from console print
+Bryan\CFB_calc_conf_rankings.m
+	fixed sortrows error with a custom sorting function
+Bryan\CFB_evaluate_week.m
+	modified to support new interest column in predictions file and removal of 'winner:' substring
+
+v1.6.1:
+Base\CFB_download.m
+	changed function name back to agree with file name
+Base\CFB_download_stats.m
+	changed function name back to agree with file name
+Base\CFB_trim_stats.m
+	changed function name back to agree with file name
+Base\CFB_html2csv_stats.m
+	changed function name back to agree with file name
+Base\CFB_print_stats.m
+	changed function name back to agree with file name
+Bryan\CFB_calc_data.m
+	changed line 91 addition to only include week 0 opponent strengths (other components already included)
+	removed instances of GP+1, as week 0 is included in iNonBye until week 4
+Bryan\CFB_calc_conf_rankings.m
+	commented out line that sorted conferences due to error message
+Bryan\CFB_predict_games.m
+	added interest of games to output file
+	commented out line that printed to screen that I screwed up somehow
+
+v1.6:
+.\teamStatUrls.cfb
+	no longer needed
+.\teamStatNames.cfb
+	no longer needed
+Base\CFB_download.m
+	stat section changed for new download_stats
+	calls CFB_calc for you now
+Base\CFB_download_stats.m
+	redone for yahoo sports
+Base\CFB_html2csv_stats.m
+	redone for yahoo sports
+Base\CFB_print_stats.m
+	redone for yahoo sports
+	molds data into same format as ncaa.com
+Base\CFB_lookup.m
+	added onto for yahoo sports
+Base\CFB_trim_stats_2.m
+	redone for yahoo sports
+Bryan\CFB_find_pointMargins.m
+	solved averaging problem for fcs teams
+Bryan\CFB_find_rushYardMargins.m
+	added FCS team calculation
+Bryan\CFB_calc_data.m
+	added preseason data to rush yard margins
+	added additional special cases
+	code looks like crap now
+Stats\Rushing*
+	stats filled in for missing teams through week 3
+
+v1.5:
+Base\CFB_lookup.m
+	added "GaSouthern" in addition to "GeorgiaSouthern"
+Arthur\CFB_calc_conf_rankings.m
+	added
+Bryan\CFB_calc_data.m
+	added week 0 opponent strengths to B up to week 4
+	changed opp strength matrices to 1/GP+1 up to week 4
+	remove rushing yard margins from weekly strengths calculation & file
+	estimates FCS teams games played as 2*week, dont have good way to track yet
+Bryan\CFB_find_rushYardMargins.m
+	changed calculation to teamNrypg - teamNryapg
+Bryan\CFB_calc_rankings.m
+	fixed previous ranking parsing, now computes correct delta ranks
+
+v1.4:
+.\teams.cfb
+	teams updated
+	old dominion, app state, georgia southern will fill with 0's for now
+.\missing_teams.txt
+	removed
+Base\CFB_calc_winloss.m, Base\CFB_calc_opponents.m, Base\CFB_calc_mov.m
+	changed NTEAMS from 124 to 129
+Base\CFB_download.m
+	fixed problem with url for stat downloading
+Base\CFB_download_stats.m
+	no longer affected by missing teams on ncaa.com, will enter 0's in their spots
+	this means teams.cfb could be altered as desired
+	changed NTEAMS from n/a to 129-1
+Arthur\CFB_calc_rankings.m
+	changed NTEAMS from 124 to 129, NOTEAM from 128 to 135
+Arthur\CFB_find_features.m
+	changed NTEAMS from 124 to 129, NOTEAM from 128 to 135
+Bryan\CFB_find_rushYardMargins.m, Bryan\CFB_find_pointMargins.m, Bryan\CFB_find_oppStrengths.m, Bryan\CFB_find_homeFieldCorrs.m, Bryan\CFB_calc_rankings.m, Bryan\CFB_calc_data.m
+	changed NTEAMS from 124 to 129
+Bryan\OverallData-2014-00.cfb, Bryan\OverallRankings-2014-00.cfb
+	updated with new teams in teams.cfb
+	used FCS stats for new-to-FBS teams
+Bryan\CFB_calc_conf_rankings.m
+	changed to support new teams/team indices
+Bryan\CFB_find_rushYardMargins.m, Bryan\CFB_find_homeFieldCorrs.m, Bryan\CFB_find_oppStrengths.m, Bryan\CFB_find_pointMargins.m
+	updated to correctly find preseason stats after week 0
+Bryan\CFB_calc_data.m
+	fixed typo on line 30
+	added alternative backup matrix solver as failsafe for nearly singular or badly scaled matrices
+Bryan\CFB_calc_rankings.m
+	fixed typo line 24 preventing file from being found
+	fixed typo line 30 getting wrong previous rankings
+	fixed subtraction order to imply +delta is improvement
+Stats\*-00.cfb
+	included to reflect recent stat downloading changes, and to prevent errors with week 2+
+
+v1.3.1:
+Bryan\CFB_calc_data.m
+	union() changed to intersect()
+
+v1.3:
+Base\CFB_calc_mov.m
+	erroneous file parsing removed
+Arthur\CFB_evaluate_week.m
+	(new file) assesses prediction performance
+Arthur\CFB_predict_games.m
+	added 3 week period of including last season's stats in predictor
+Bryan\CFB_evaluate_week.m
+	(new file, identical) assesses prediction performance
+Bryan\CFB_predict_games.m
+	output file format changed for consistency
+
+v1.2:
+.\
+	removed redundant stat categories from download list
+Arthur\
+	populated
+Bryan\
+	probably fixed some minor bugs
+
+v1.1:
+Bryan\CFB_predict_games.m
+	changed team strength indexing from 1 to 4 (later to 5)

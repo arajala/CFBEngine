@@ -1,0 +1,50 @@
+libsvm:
+Bama,MissSt,20,7: 0.5837
+MichSt,Nebraska,41,28: 0.5000
+WestVirg,Kansas,19,31: 0.2620
+NCState,BC,21,38: 0.4233
+Maryland,VirgTech,27,24: 0.5299
+WashSt,Arizona,24,17: 0.6255
+SouthAla,Navy,14,42: 0.4338
+Mich,NW,27,19: 0.5276
+Cal,Colorado,24,41: 0.4435
+SDSt,Hawaii,28,21: 0.5200
+SJSt,Nevada,16,38: 0.4612
+
+liblin:
+Washington,UCLA,31,41: 0.4413
+WestVirg,Kansas,19,31: 0.2477
+NCState,BC,21,38: 0.3673
+Maryland,VirgTech,27,24: 0.5898
+WashSt,Arizona,24,17: 0.7623
+SouthAla,Navy,14,42: 0.4395
+Mich,NW,27,19: 0.5173
+SJSt,Nevada,16,38: 0.4092
+
+libsvm:
+FresnoSt,USC,20,45: 0.4798
+UtahSt,NIll,21,14: 0.7744
+Pitt,BowlGreen,30,27: 0.8225
+MiaFL,Lousiville,9,36: 0.2444
+MidTenn,Navy,6,24: 0.4211
+UCF,Baylor,52,42: 0.9286
+Nebraska,Georgia:24,19: 0.8001
+Oklahoma,Alabama,45,31: 0.6957
+Clemson,OhioSt,40,35: 0.7112
+Vanderbilt,Houston,41,24: 0.6879
+ArkSt,BallSt,23,20: 0.7913
+
+liblin:
+FresnoSt,USC,20,45: 0.4942
+UtahSt,NIll,21,14: 0.6725
+Pitt,BowlGreen,30,27: 0.8557
+Cinci,NoCar,17,39: 0.3565
+MiaFL,Louisville,9,36: 0.3974
+MidTenn,Navy,6,24: 0.4675
+UCF,Baylor,52,42: 0.8976
+Wisc,SouthCar,24,34: 0.4480
+Nebraska,Georgia:24,19: 0.7877
+Oklahoma,Alabama,45,31: 0.7562
+Clemson,OhioSt,40,35: 0.6148
+Vanderbilt,Houston,41,24: 0.5755
+ArkSt,BallSt,23,20: 0.7812
