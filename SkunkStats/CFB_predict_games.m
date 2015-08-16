@@ -32,8 +32,9 @@ while moreScores
       lastYear = sprintf('%d', eval(year)-1);
       testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, lastYear, '16');
     elseif eval(week) < 4
+        lastYear = sprintf('%d', eval(year)-1);
         preFraction = 1 / eval(week);
-        testData(iGame,:) = preFraction * CFB_find_features(iTeam1, iTeam2, year, '00') + ...
+        testData(iGame,:) = preFraction * CFB_find_features(iTeam1, iTeam2, lastYear, '16') + ...
             (1-preFraction) * CFB_find_features(iTeam1, iTeam2, year, lastWeek);
     else
         testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, year, lastWeek);
