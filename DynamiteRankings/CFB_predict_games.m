@@ -11,6 +11,10 @@ if length(lastWeek) == 1
     lastWeek = sprintf('0%s', lastWeek);
 end
 file = sprintf('OverallRankings-%s-%s.cfb', year, lastWeek);
+if strcmp(week, '01')
+    lastYear = sprintf('%d', eval(year)-1);
+    file = sprintf('OverallRankings-%s-%s.cfb', lastYear, '16');
+end
 overallRankings = csvread(file);
 
 %% === Load scores from this week ===
