@@ -16,6 +16,7 @@ try
     str = urlread(url);
 catch
     fprintf('Error reading URL %s, exiting\n', url);
+    return;
 end
 
 %% === Read in all game results ===
