@@ -45,7 +45,7 @@ while moreScores
         winner = team1;
         winScore = strength1 - (strength2+homeFieldAdvantage);
     end
-	interest = overallRankings(iTeam1,4)+overallRankings(iTeam2,4)-winScore;
+	  interest = overallRankings(iTeam1,4)+overallRankings(iTeam2,4)-winScore;
     predictions = sprintf('%s%.1f, %s @ %s, %s, %.1f\n', predictions, interest, team1, team2, winner, winScore);
     fprintf('Game: %s @ %s, Predicted Winner: %s by %.1f points\n', team1, team2, winner, winScore);
 end

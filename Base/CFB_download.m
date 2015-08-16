@@ -1,5 +1,5 @@
 function CFB_download(varargin)
-% For input guide, call CFB_download_2() with no inputs
+% For input guide, call CFB_download() with no inputs
 %
 
 %% === Parse input ===

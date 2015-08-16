@@ -28,7 +28,10 @@ while moreScores
     if length(lastWeek) == 3
         lastWeek = lastWeek(2:3);
     end
-    if eval(week) < 4
+    if eval(week) == 1
+      lastYear = sprintf('%d', eval(year)-1);
+      testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, lastYear, '16');
+    elseif eval(week) < 4
         preFraction = 1 / eval(week);
         testData(iGame,:) = preFraction * CFB_find_features(iTeam1, iTeam2, year, '00') + ...
             (1-preFraction) * CFB_find_features(iTeam1, iTeam2, year, lastWeek);
@@ -64,7 +67,7 @@ for iGame = 1:nGames
         results{iGame,4} = abs(conf(iGame,1));
     end
 end
-results = sortrows(results, 4);
+results = CFB_sort_results(results, 4);
 
 %% === Print games to console and file ===
 predictions = '';
