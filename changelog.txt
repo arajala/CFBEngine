@@ -1,3 +1,7 @@
+v1.6.6
+Bryan\ changed to DynamiteRankings\ for github
+Arthur\ changed to SkunkStats\ for github
+
 v1.6.5:
 Bryan\CFB_calc_data.m
 	commented out calculation of weekly strengths and SDs
