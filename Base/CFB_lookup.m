@@ -4,7 +4,7 @@ function teamIndex = CFB_lookup(teamStr)
 %
 
 %% === Open the team master list ===
-fid = fopen('..\teams.cfb', 'r');
+fid = fopen('..\teams-2014.cfb', 'r');
 originalStr = teamStr;
 
 %% === Remove punctuation ===
