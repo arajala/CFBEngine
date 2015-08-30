@@ -18,15 +18,19 @@ for iWeek = 0:nWeeks
     if length(thisWeek) == 3
         thisWeek = thisWeek(2:3);
     end
-    thisOFile = sprintf('../Stats/RushingOffense-%s-%s.cfb', year, thisWeek);
-    thisDFile = sprintf('../Stats/RushingDefense-%s-%s.cfb', year, thisWeek);
-    thisO = csvread(thisOFile);
-    thisD = csvread(thisDFile);
-    % Calculate the margin
-    rushYardMargins((1:NTEAMS-1),iWeek+weekOffset) = thisO((1:NTEAMS-1),6) - thisD((1:NTEAMS-1),6);
-    allFBSrya = sum(thisD((1:NTEAMS-1),3));
-    allFBSry = sum(thisO((1:NTEAMS-1),3));
-    if iWeek ~= 0
+    % Do something different for Week 0
+    if iWeek == 0
+        statsfile = sprintf('OverallData-%s-%s.cfb', year, thisWeek);
+        rushYardMargins(:,1) = statsfile(:,5);
+    else
+        thisOFile = sprintf('../Stats/RushingOffense-%s-%s.cfb', year, thisWeek);
+        thisDFile = sprintf('../Stats/RushingDefense-%s-%s.cfb', year, thisWeek);
+        thisO = csvread(thisOFile);
+        thisD = csvread(thisDFile);
+        % Calculate the margin
+        rushYardMargins((1:NTEAMS-1),iWeek+weekOffset) = thisO((1:NTEAMS-1),6) - thisD((1:NTEAMS-1),6);
+        allFBSrya = sum(thisD((1:NTEAMS-1),3));
+        allFBSry = sum(thisO((1:NTEAMS-1),3));
         rushYardMargins(NTEAMS,iWeek+weekOffset) = (allFBSrya - allFBSry) ./ sum(nFCSgames(1:iWeek+weekOffset));
     end
 end

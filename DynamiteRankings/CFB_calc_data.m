@@ -8,7 +8,7 @@ homeFieldCoef = 4;
 
 %% === Gather the categories ===
 [pointMargins nFCSgames] = CFB_find_pointMargins(year, week);
-calcOppStrengths = CFB_find_oppStrengths(year, week);
+%calcOppStrengths = CFB_find_oppStrengths(year, week);
 rushYardMargins = CFB_find_rushYardMargins(year, week, nFCSgames);
 homeFieldCorrs = CFB_find_homeFieldCorrs(year, week);
 

@@ -1,0 +1,4 @@
+Copied Overall-Data-2014-18.cfb and renamed Overall-Data-2015-00.cfb.
+Added rows for teams moving into FBS, copying over from FCS line.
+Removed rows for teams dropping out of FBS.
+Removed extraneous quotes from copied file in Notepad++.

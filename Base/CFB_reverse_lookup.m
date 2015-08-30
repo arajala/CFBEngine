@@ -2,7 +2,7 @@ function teamStr = CFB_reverse_lookup(iTeam, year)
 %
 
 %% === Open team master list ===
-fid = fopen(sprintf('..\teams-%s.cfb', year), 'r');
+fid = fopen(sprintf('../teams-%s.cfb', year), 'r');
 
 %% === Loop through teams i times, return line ===
 for i = 1:iTeam
