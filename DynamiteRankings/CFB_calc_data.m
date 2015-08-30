@@ -75,7 +75,7 @@ for iTeam = 1:NTEAMS
         if isempty(thisOpp)
             continue
         end
-        iOpp = CFB_lookup(thisOpp);
+        iOpp = CFB_lookup(thisOpp, year);
         oppStrengths(iTeam,iOpp) = 1 / GP(iTeam);
     end 
 end

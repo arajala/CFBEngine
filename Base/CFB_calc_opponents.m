@@ -35,8 +35,8 @@ for iWeek = 0:nWeeks
         commas = find(thisScore == ',');
         team1 = thisScore(1:commas(1)-1);
         team2 = thisScore(commas(1)+1:commas(2)-1);
-        iTeam1 = CFB_lookup(team1);
-        iTeam2 = CFB_lookup(team2);
+        iTeam1 = CFB_lookup(team1, year);
+        iTeam2 = CFB_lookup(team2, year);
         OPPS{iTeam1,iWeek+weekOffset} = team2;
         OPPS{iTeam2,iWeek+weekOffset} = team1;
     end

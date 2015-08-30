@@ -33,8 +33,8 @@ for iYear = iStartYear:iEndYear
             commas = find(thisScore == ',');
             team1 = thisScore(1:commas(1)-1);
             team2 = thisScore(commas(1)+1:commas(2)-1);
-            iTeam1 = CFB_lookup(team1);
-            iTeam2 = CFB_lookup(team2);
+            iTeam1 = CFB_lookup(team1, sprintf('%d', iYear));
+            iTeam2 = CFB_lookup(team2, sprintf('%d', iYear));
             % Get data features
             sYear = sprintf('%d', iYear);
             sWeek = sprintf('%d', iWeek);
