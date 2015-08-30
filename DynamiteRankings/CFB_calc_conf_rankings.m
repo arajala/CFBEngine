@@ -8,57 +8,62 @@ ranks = csvread(rankFile);
 conferences = cell(11, 2);
 
 %% === ACC ===
-iACC = [15; 51; 97; 70; 30; 21; 121; 35; 84; 24; 119; 69; 120; 56];
+%% BC, Clem, Duke, FSU, GT, Lou, Mia, UNC, NCST, Pitt, Syr, UVA, VT, Wake
+iACC = [15; 22; 25; 31; 36; 52; 57; 70; 71; 85; 98; 119; 120; 121];
 conferences{1,2} = -1 * mean(ranks(iACC,4));
 conferences{1,1} = 'ACC';
 
 %% === American ===
-iAmerican = [108; 20; 99; 55; 25; 112; 93; 37; 110; 88; 107];
+%% Cin, ECU, Hou, Mem, Navy, SMU, USF, Tem, Tuln, Tlsa, UCF, UConn
+iAmerican = [21; 26; 38; 56; 65; 89; 94; 100; 108; 109; 110; 112];
 conferences{2,2} = -1 * mean(ranks(iAmerican,4));
 conferences{2,1} = 'American';
 
 %% === B1G ===
-iB1G = [59; 58; 87; 40; 83; 53; 76; 61; 39; 41; 65; 85; 73; 127];
+%% Ill, Ind, Iowa, MD, Mich, MSU, Minn, Neb, NW, OSU, PSU, Pur, Rutg, Wis
+iB1G = [40; 41; 42; 54; 59; 60; 62; 66; 74; 77; 84; 86; 88; 127];
 conferences{3,2} = -1 * mean(ranks(iB1G,4));
-conferences{3,1} = 'B1G';
+conferences{3,1} = 'Big Ten';
 
 %% === Big 12 ===
-iBig12 = [43; 13; 44; 98; 77; 124; 104; 101; 78; 42];
+%% Bay, ISU, Kan, KSU, Okla, OKST, TCU, Tex, TTU, WVU
+iBig12 = [13; 43; 44; 45; 78; 79; 99; 102; 105; 124];
 conferences{4,2} = -1 * mean(ranks(iBig12,4));
 conferences{4,1} = 'Big 12';
 
 %% === Conference USA ===
-iCUSA = [125; 52; 79; 109; 60; 28; 27; 115; 114; 86; 50; 95; 71];
+%% Char, FIU, FAU, LT, Mrsh, MTU, NT, OD, Rice, USM, UTEP, UTSA, WKU
+iCUSA = [20; 28; 29; 51; 53; 61; 72; 80; 87; 96; 114; 115; 125];
 conferences{5,2} = -1 * mean(ranks(iCUSA,4));
 conferences{5,1} = 'Conference USA';
 
-%% === Independent ===
-iInd = [11; 74; 9; 64];
-conferences{6,2} = -1 * mean(ranks(iInd,4));
-conferences{6,1} = 'Independent';
-
 %% === MAC ===
-iMAC = [75; 2; 17; 16; 54; 57; 45; 19; 72; 12; 126; 26; 105];
+%% Akr, Ball, Bowl, Buff, CMU, EMU, Kent, Mass, MOH, NIU, Ohio, Tol, WMU
+iMAC = [2; 12; 16; 17; 19; 27; 46; 55; 58; 73; 76; 106; 126];
 conferences{7,2} = -1 * mean(ranks(iMAC,4));
 conferences{7,1} = 'MAC';
 
 %% === Mountain West ===
-iMW = [90; 66; 89; 113; 31; 36; 23; 1; 128; 67; 117; 14];
+%% AFA, Boise, CSU, Fres, Haw, Nev, UNM, SDSU, SJSU, UNLV, USU, Wyo
+iMW = [1; 14; 24; 32; 37; 67; 68; 90; 91; 113; 117; 128];
 conferences{8,2} = -1 * mean(ranks(iMW,4));
 conferences{8,1} = 'Mountain West';
 
 %% === Pac-12 ===
-iPac12 = [123; 18; 82; 96; 81; 122; 6; 5; 116; 111; 22; 94];
+%% Ariz, ASU, Cal, Colo, Ore, ORST, USC, Stan, UCLA, Utah, Wash, WSU
+iPac12 = [5; 6; 18; 23; 82; 83; 95; 97; 111; 116; 122; 123];
 conferences{9,2} = -1 * mean(ranks(iPac12,4));
 conferences{9,1} = 'Pac-12';
 
 %% === SEC ===
-iSEC = [29; 46; 118; 63; 32; 100; 92; 10; 102; 3; 80; 47; 62; 7];
+%% Bama, Ark, Aub, Fla, UGA, UK, LSU, MSST, Mizz, Miss, SCar, Tenn, TAM, Vandy
+iSEC = [3; 7; 10; 30; 33; 47; 48; 63; 64; 81; 93; 101; 103; 118];
 conferences{10,2} = -1 * mean(ranks(iSEC,4));
 conferences{10,1} = 'SEC';
 
 %% === Sun Belt ===
-iSB = [91; 38; 8; 34; 48; 49; 68; 103; 4; 33; 106];
+%% App, ARST, GASO, GSU, Idho, ULL, ULM, NMSU, SOAL, TXST, Troy
+iSB = [4; 8; 34; 35; 39; 49; 50; 69; 92; 104; 107];
 conferences{11,2} = -1 * mean(ranks(iSB,4));
 conferences{11,1} = 'Sun Belt';
 
