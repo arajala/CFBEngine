@@ -21,8 +21,8 @@ while moreScores
     commas = find(thisScore == ',');
     teams{iGame,1} = thisScore(1:commas(1)-1);
     teams{iGame,2} = thisScore(commas(1)+1:commas(2)-1);
-    iTeam1 = CFB_lookup(teams{iGame,1});
-    iTeam2 = CFB_lookup(teams{iGame,2});
+    iTeam1 = CFB_lookup(teams{iGame,1}, year);
+    iTeam2 = CFB_lookup(teams{iGame,2}, year);
     % Get data features
     lastWeek = sprintf('0%d', eval(week)-1);
     if length(lastWeek) == 3

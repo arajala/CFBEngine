@@ -17,7 +17,7 @@ MOV = CFB_calc_mov(year, week);
 %% === Calculate opponents w-l and opponents opponents w-l ===
 % Compile cell-array list of opponents by team index
 OPPS = CFB_calc_opponents(year, week);
-[OPPWL OPPOPPWL] = CFB_calc_sos(week, OPPS, WL);
+[OPPWL OPPOPPWL] = CFB_calc_sos(year, week, OPPS, WL);
 
 %% === Arrange into matrix and csvwrite ===
 allStats = [GP, WL, MOV, OPPWL, OPPOPPWL, HWL, AWL, RWL];

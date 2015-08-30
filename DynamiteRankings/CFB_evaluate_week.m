@@ -24,8 +24,8 @@ while moreScores
     commas = find(thisScore == ',');
     team1 = thisScore(1:commas(1)-1);
     team2 = thisScore(commas(1)+1:commas(2)-1);
-    iTeam1 = CFB_lookup(team1);
-    iTeam2 = CFB_lookup(team2);
+    iTeam1 = CFB_lookup(team1, year);
+    iTeam2 = CFB_lookup(team2, year);
     score1 = thisScore(commas(2)+1:commas(3)-1);
     score2 = thisScore(commas(3)+1:end);
     % Find scores
@@ -45,11 +45,11 @@ while moreScores
             end
             iAt = strfind(thisPred, ' @ ');
             iComma = strfind(thisPred, ',');
-            iPredTeam1 = CFB_lookup(thisPred(iComma(1)+2:iAt));
-            iPredTeam2 = CFB_lookup(thisPred(iAt+3:iComma(2)-1));
+            iPredTeam1 = CFB_lookup(thisPred(iComma(1)+2:iAt), year);
+            iPredTeam2 = CFB_lookup(thisPred(iAt+3:iComma(2)-1), year);
             if iTeam1 == iPredTeam1 && iTeam2 == iPredTeam2
                 iWinner = iComma(2) + 2;
-                iPredWinner = CFB_lookup(thisPred(iWinner:iComma(3)-1));
+                iPredWinner = CFB_lookup(thisPred(iWinner:iComma(3)-1), year);
                 if score2 > score1 && iPredWinner == iTeam2
                     fprintf('Prediction RIGHT: %s @ %s, winner: %s.\n', team1, team2, team2);
                     predictions(1) = predictions(1) + 1;

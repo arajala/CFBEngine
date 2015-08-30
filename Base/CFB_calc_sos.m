@@ -1,4 +1,4 @@
-function [OPPWL OPPOPPWL] = CFB_calc_sos(week, OPPS, WL)
+function [OPPWL OPPOPPWL] = CFB_calc_sos(year, week, OPPS, WL)
 % Parent function: CFB_calc_stats
 % Child function:
 %
@@ -19,7 +19,7 @@ for iTeam = 1:nTeams
         if isempty(thisOpp)
             continue
         end
-        iThisOpp = CFB_lookup(thisOpp);
+        iThisOpp = CFB_lookup(thisOpp, year);
         OPPWL(iTeam,W) = OPPWL(iTeam,W) + WL(iThisOpp,W);
         OPPWL(iTeam,L) = OPPWL(iTeam,L) + WL(iThisOpp,L);
         % Find opponents opponents and their records
@@ -28,7 +28,7 @@ for iTeam = 1:nTeams
             if isempty(thisOppOpp)
                 continue
             end
-            iThisOppOpp = CFB_lookup(thisOppOpp);
+            iThisOppOpp = CFB_lookup(thisOppOpp, year);
             OPPOPPWL(iTeam,W) = OPPOPPWL(iTeam,W) + WL(iThisOppOpp,W);
             OPPOPPWL(iTeam,L) = OPPOPPWL(iTeam,L) + WL(iThisOppOpp,L);
         end

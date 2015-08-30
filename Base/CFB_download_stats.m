@@ -16,7 +16,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         toStats(iTeam,(1:nStats)) = matStats;
@@ -38,7 +38,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         poStats(iTeam,(1:nStats)) = matStats;
@@ -61,7 +61,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         roStats(iTeam,(1:nStats)) = matStats;
@@ -84,7 +84,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         rcoStats(iTeam,(1:nStats)) = matStats;
@@ -107,7 +107,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         tdStats(iTeam,(1:nStats)) = matStats;
@@ -130,7 +130,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         pdStats(iTeam,(1:nStats)) = matStats;
@@ -153,7 +153,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         rdStats(iTeam,(1:nStats)) = matStats;
@@ -175,7 +175,7 @@ try
             continue
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         rcdStats(iTeam,(1:nStats)) = matStats;
@@ -198,7 +198,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         stpStats(iTeam,(1:nStats)) = matStats;
@@ -221,7 +221,7 @@ try
         end
         [school stats] = CFB_html2csv_stats(trimmedStr);
         nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school);
+        iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
         strStats(iTeam,(1:nStats)) = matStats;

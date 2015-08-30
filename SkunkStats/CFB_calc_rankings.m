@@ -27,7 +27,7 @@ csvwrite(rankFile, ranks);
 nTeams = size(sRanks, 1);
 rankStr = '';
 for iTeam = 1:nTeams
-    team = CFB_reverse_lookup(iRanks(iTeam));
+    team = CFB_reverse_lookup(iRanks(iTeam), year);
     if team == -1
         team = 'FCS';
     end
