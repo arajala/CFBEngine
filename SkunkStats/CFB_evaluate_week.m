@@ -49,7 +49,7 @@ while moreScores
             iPredTeam2 = CFB_lookup(thisPred(iAt+3:iComma(1)-1), year);
             if iTeam1 == iPredTeam1 && iTeam2 == iPredTeam2
                 iWinner = strfind(thisPred, ':');
-                iPredWinner = CFB_lookup(thisPred(iWinner+2:iComma(2)-1));
+                iPredWinner = CFB_lookup(thisPred(iWinner+2:iComma(2)-1), year);
                 if score2 > score1 && iPredWinner == iTeam2
                     fprintf('Prediction RIGHT: %s @ %s, winner: %s.\n', team1, team2, team2);
                     predictions(1) = predictions(1) + 1;
