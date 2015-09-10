@@ -13,7 +13,11 @@ strengths = data(:,1);
 kStrengths = strengths - min(strengths);
 
 %% === Calculate rank points ===
-ranks = kStrengths .* (stats(:,2)+2) ./ (stats(:,1)+4);
+if eval(week) == 0
+    ranks = kStrengths .* 0.5;
+else
+	ranks = kStrengths .* (stats(:,2)+2) ./ (stats(:,1)+4);
+end
 [sRanks iRanks] = sort(ranks, 1, 'descend');
 nRanks = length(iRanks);
 jRanks = zeros(nRanks, 1);

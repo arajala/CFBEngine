@@ -5,7 +5,7 @@ addpath ../Base
 %% === Read overall rankings ===
 rankFile = sprintf('OverallRankings-%s-%s.cfb', year, week);
 ranks = csvread(rankFile);
-conferences = cell(11, 2);
+conferences = cell(10, 2);
 
 %% === ACC ===
 %% BC, Clem, Duke, FSU, GT, Lou, Mia, UNC, NCST, Pitt, Syr, UVA, VT, Wake
@@ -40,37 +40,37 @@ conferences{5,1} = 'Conference USA';
 %% === MAC ===
 %% Akr, Ball, Bowl, Buff, CMU, EMU, Kent, Mass, MOH, NIU, Ohio, Tol, WMU
 iMAC = [2; 12; 16; 17; 19; 27; 46; 55; 58; 73; 76; 106; 126];
-conferences{7,2} = -1 * mean(ranks(iMAC,4));
-conferences{7,1} = 'MAC';
+conferences{6,2} = -1 * mean(ranks(iMAC,4));
+conferences{6,1} = 'MAC';
 
 %% === Mountain West ===
 %% AFA, Boise, CSU, Fres, Haw, Nev, UNM, SDSU, SJSU, UNLV, USU, Wyo
 iMW = [1; 14; 24; 32; 37; 67; 68; 90; 91; 113; 117; 128];
-conferences{8,2} = -1 * mean(ranks(iMW,4));
-conferences{8,1} = 'Mountain West';
+conferences{7,2} = -1 * mean(ranks(iMW,4));
+conferences{7,1} = 'Mountain West';
 
 %% === Pac-12 ===
 %% Ariz, ASU, Cal, Colo, Ore, ORST, USC, Stan, UCLA, Utah, Wash, WSU
 iPac12 = [5; 6; 18; 23; 82; 83; 95; 97; 111; 116; 122; 123];
-conferences{9,2} = -1 * mean(ranks(iPac12,4));
-conferences{9,1} = 'Pac-12';
+conferences{8,2} = -1 * mean(ranks(iPac12,4));
+conferences{8,1} = 'Pac-12';
 
 %% === SEC ===
 %% Bama, Ark, Aub, Fla, UGA, UK, LSU, MSST, Mizz, Miss, SCar, Tenn, TAM, Vandy
 iSEC = [3; 7; 10; 30; 33; 47; 48; 63; 64; 81; 93; 101; 103; 118];
-conferences{10,2} = -1 * mean(ranks(iSEC,4));
-conferences{10,1} = 'SEC';
+conferences{9,2} = -1 * mean(ranks(iSEC,4));
+conferences{9,1} = 'SEC';
 
 %% === Sun Belt ===
 %% App, ARST, GASO, GSU, Idho, ULL, ULM, NMSU, SOAL, TXST, Troy
 iSB = [4; 8; 34; 35; 39; 49; 50; 69; 92; 104; 107];
-conferences{11,2} = -1 * mean(ranks(iSB,4));
-conferences{11,1} = 'Sun Belt';
+conferences{10,2} = -1 * mean(ranks(iSB,4));
+conferences{10,1} = 'Sun Belt';
 
 %% === Sort and print ===
 conferences = sortrows_octave(conferences, 2);
 cRanks = '';
-for iConf = 1:11
+for iConf = 1:10
     cRanks = sprintf('%s%s,%.2f\n', cRanks, conferences{iConf,1}, -1*conferences{iConf,2});
 end
 fprintf('%s', cRanks);
