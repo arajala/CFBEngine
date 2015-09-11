@@ -3,7 +3,7 @@ function CFB_download_stats(year, week, print)
 NTEAMS = 129;
 
 %% === Total offense ===
-toUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=offense&conference=I-A_all&year=%s', year);
+toUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category10/sort01.html', year);
 toStats = zeros(NTEAMS, 1);
 try
     str = urlread(toUrl);
@@ -24,8 +24,9 @@ try
 catch
     sprintf('Error during total offense, skipping\n');
 end
+
 %% === Passing offense ===
-poUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=offense&cat2=Passing&conference=I-A_all&year=%s', year);
+poUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category02/sort01.html', year);
 poStats = zeros(NTEAMS, 1);
 try
     str = urlread(poUrl);
@@ -48,7 +49,7 @@ catch
 end
 
 %% === Rushing offense ===
-roUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=offense&cat2=Rushing&conference=I-A_all&year=%s', year);
+roUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category01/sort01.html', year);
 roStats = zeros(NTEAMS, 1);
 try
     str = urlread(roUrl);
@@ -70,31 +71,8 @@ catch
     sprintf('Error during rushing offense, skipping\n');
 end
 
-%% === Receiving offense ===
-rcoUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=offense&cat2=Receiving&conference=I-A_all&year=%s', year);
-rcoStats = zeros(NTEAMS, 1);
-try
-    str = urlread(rcoUrl);
-    moreStats = true;
-    while moreStats
-        [trimmedStr str] = CFB_trim_stats(str);
-        if strcmp(trimmedStr, '')
-            moreStats = false;
-            continue
-        end
-        [school stats] = CFB_html2csv_stats(trimmedStr);
-        nStats = numel(find(stats == ',')) + 1;
-        iTeam = CFB_lookup(school, year);
-        matStats = str2num(stats);
-        matStats(matStats > 1e6) = 0;
-        rcoStats(iTeam,(1:nStats)) = matStats;
-    end
-catch
-    sprintf('Error during receiving offense, skipping\n');
-end
-
 %% === Total defense ===
-tdUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=defense&conference=I-A_all&year=%s', year);
+tdUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/defense/split01/category10/sort01.html', year);
 tdStats = zeros(NTEAMS, 1);
 try
     str = urlread(tdUrl);
@@ -117,7 +95,7 @@ catch
 end
 
 %% === Passing defense ===
-pdUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=defense&cat2=Passing&conference=I-A_all&year=%s', year);
+pdUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/defense/split01/category02/sort01.html', year);
 pdStats = zeros(NTEAMS, 1);
 try
     str = urlread(pdUrl);
@@ -140,7 +118,7 @@ catch
 end
 
 %% === Rushing defense ===
-rdUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=defense&cat2=Rushing&conference=I-A_all&year=%s', year);
+rdUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/defense/split01/category01/sort01.html', year);
 rdStats = zeros(NTEAMS, 1);
 try
     str = urlread(rdUrl);
@@ -162,30 +140,8 @@ catch
     sprintf('Error during rushing defense, skipping\n');
 end
 
-%% === Receiving defense ===
-rcdUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=defense&cat2=Receiving&conference=I-A_all&year=%s', year);
-rcdStats = zeros(NTEAMS, 1);
-try
-    str = urlread(rcdUrl);
-    moreStats = true;
-    while moreStats
-        [trimmedStr str] = CFB_trim_stats(str);
-        if strcmp(trimmedStr, '')
-            moreStats = false;
-            continue
-        end
-        [school stats] = CFB_html2csv_stats(trimmedStr);
-        iTeam = CFB_lookup(school, year);
-        matStats = str2num(stats);
-        matStats(matStats > 1e6) = 0;
-        rcdStats(iTeam,(1:nStats)) = matStats;
-    end
-catch
-    sprintf('Error during receiving defense, skipping\n');
-end
-
 %% === Special teams punting ===
-stpUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=special&conference=I-A_all&year=%s', year);
+stpUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category06/sort01.html', year);
 stpStats = zeros(NTEAMS, 1);
 try
     str = urlread(stpUrl);
@@ -207,11 +163,11 @@ catch
     sprintf('Error during special teams punting, skipping\n');
 end
 
-%% === Special teams returns ===
-strUrl = sprintf('http://sports.yahoo.com/ncaa/football/stats/byteam?cat1=special&cat2=Returns&conference=I-A_all&year=%s', year);
-strStats = zeros(NTEAMS, 1);
+%% === Special teams punt returns ===
+stprUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category04/sort01.html', year);
+stprStats = zeros(NTEAMS, 1);
 try
-    str = urlread(strUrl);
+    str = urlread(stprUrl);
     moreStats = true;
     while moreStats
         [trimmedStr str] = CFB_trim_stats(str);
@@ -224,14 +180,223 @@ try
         iTeam = CFB_lookup(school, year);
         matStats = str2num(stats);
         matStats(matStats > 1e6) = 0;
-        strStats(iTeam,(1:nStats)) = matStats;
+        stprStats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === Special teams kick returns ===
+stkrUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category05/sort01.html', year);
+stkrStats = zeros(NTEAMS, 1);
+try
+    str = urlread(stkrUrl);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        stkrStats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === 3rd down ===
+d3Url = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category25/sort01.html', year);
+d3Stats = zeros(NTEAMS, 1);
+try
+    str = urlread(d3Url);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        d3Stats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === 4th down ===
+d4Url = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category26/sort01.html', year);
+d4Stats = zeros(NTEAMS, 1);
+try
+    str = urlread(d4Url);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        d4Stats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === Penalties ===
+penUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category14/sort01.html', year);
+penStats = zeros(NTEAMS, 1);
+try
+    str = urlread(penUrl);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        penStats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === Opp 1st down ===
+oppD1Url = sprintf('http://www.cfbstats.com/%s/leader/national/team/defense/split01/category13/sort01.html', year);
+oppD1Stats = zeros(NTEAMS, 1);
+try
+    str = urlread(oppD1Url);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        oppD1Stats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === 1st down ===
+d1Url = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category13/sort01.html', year);
+d1Stats = zeros(NTEAMS, 1);
+try
+    str = urlread(d1Url);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        d1Stats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === Sacks allowed ===
+sackUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/defense/split01/category20/sort01.html', year);
+sackStats = zeros(NTEAMS, 1);
+try
+    str = urlread(sackUrl);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        sackStats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === Scoring offense ===
+oScoreUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category09/sort01.html', year);
+oScoreStats = zeros(NTEAMS, 1);
+try
+    str = urlread(oScoreUrl);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        oScoreStats(iTeam,(1:nStats)) = matStats;
+    end
+catch
+    sprintf('Error during special teams returns, skipping\n');
+end
+
+%% === TOP ===
+timeUrl = sprintf('http://www.cfbstats.com/%s/leader/national/team/offense/split01/category15/sort01.html', year);
+timeStats = zeros(NTEAMS, 1);
+try
+    str = urlread(timeUrl);
+    moreStats = true;
+    while moreStats
+        [trimmedStr str] = CFB_trim_stats(str);
+        if strcmp(trimmedStr, '')
+            moreStats = false;
+            continue
+        end
+        [school stats] = CFB_html2csv_stats(trimmedStr);
+        nStats = numel(find(stats == ',')) + 1;
+        iTeam = CFB_lookup(school, year);
+        matStats = str2num(stats);
+        matStats(matStats > 1e6) = 0;
+        timeStats(iTeam,(1:nStats)) = matStats;
     end
 catch
     sprintf('Error during special teams returns, skipping\n');
 end
 
 %% === Print stats to file ===
-CFB_print_stats(year, week, toStats, poStats, roStats, rcoStats, tdStats, pdStats, rdStats, rcdStats, stpStats, strStats);
+CFB_print_stats(year, week, toStats, poStats, roStats, tdStats, pdStats, ...
+rdStats, stpStats, stprStats, stkrStats, d3Stats, d4Stats, penStats, oppD1Stats, ...
+d1Stats, sackStats, oScoreStats, timeStats);
 
 %%
 end

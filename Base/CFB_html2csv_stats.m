@@ -2,11 +2,10 @@ function [school stats] = CFB_html2csv_stats(str)
 %
 
 %% === HTML markers ===
-schoolStartMarker = '/teams/';
+schoolStartMarker = '.html';
 schoolEndMarker = '</a>';
-statStartMarker = ' class="yspscores';
-statStartMarker2 = '">';
-statEndMarker = '</';
+statStartMarker = '<td>';
+statEndMarker = '</td>';
 
 %% === Find school name ===
 % Find start and trim
@@ -16,7 +15,7 @@ if isempty(iStart)
     stats = '';
     return
 end
-str = str(iStart+12:end);
+str = str(iStart+7:end);
 % Find end
 iEnd = strfind(str, schoolEndMarker);
 % Find school name
@@ -32,14 +31,9 @@ while moreStats
         moreStats = false;
         continue
     end
-    str = str(iStart:end);
-    iStart = strfind(str, statStartMarker2);
-    str = str(iStart+2:end);
+    str = str(iStart+4:end);
     iEnd = strfind(str, statEndMarker);
     thisStat = str(1:iEnd-1);
-    if strcmp(thisStat, '&nbsp;')
-        continue
-    end
     stats = sprintf('%s%s,', stats, thisStat);
     str = str(iEnd+4:end);
 end
@@ -53,9 +47,11 @@ for i = 1:nNA
 end
 % Convert mm:ss TOP to minutes
 iCln = strfind(stats, ':');
-if ~isempty(iCln)
-    mins = eval(stats(iCln-2:iCln-1)) * 60 + eval(stats(iCln+1:iCln+2));
-    stats = sprintf('%s%d%s', stats(1:iCln-3), mins, stats(iCln+3:end));
+while ~isempty(iCln)
+    thisCln = iCln(1);
+    mins = eval(stats(thisCln-2:thisCln-1)) * 60 + eval(stats(thisCln+1:thisCln+2));
+    stats = sprintf('%s%d%s', stats(1:thisCln-3), mins, stats(thisCln+3:end));
+    iCln = strfind(stats, ':');
 end
 % Trim last comma
 stats = stats(1:end-1);

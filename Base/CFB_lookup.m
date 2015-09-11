@@ -94,6 +94,26 @@ elseif strcmp(teamStr, 'LAMonroe')
     teamStr = 'LaMonroe';
 elseif strcmp(teamStr, 'EastMichigan')
     teamStr = 'EasternMich';
+elseif strcmp(teamStr, 'CentralMichigan')
+    teamStr = 'CentralMich';
+elseif strcmp(teamStr, 'EasternMichigan')
+    teamStr = 'EasternMich';
+elseif strcmp(teamStr, 'FloridaInternational')
+    teamStr = 'FIU';
+elseif strcmp(teamStr, 'LouisianaLafayette')
+    teamStr = 'LaLafayette';
+elseif strcmp(teamStr, 'LouisianaLafayette')
+    teamStr = 'LaLafayette';
+elseif strcmp(teamStr, 'LouisianaMonroe')
+    teamStr = 'LaMonroe';
+elseif strcmp(teamStr, 'MiddleTennessee')
+    teamStr = 'MiddleTenn';
+elseif strcmp(teamStr, 'SouthernMississippi')
+    teamStr = 'SouthernMiss';
+elseif strcmp(teamStr, 'WesternMichigan')
+    teamStr = 'WesternMich';
+elseif strcmp(teamStr, 'TexasAamp;M')
+    teamStr = 'TexasAM';
 end
 
 %%
@@ -131,6 +151,7 @@ teamStr(teamStr == '-') = '';
 teamStr(teamStr == '(') = '';
 teamStr(teamStr == ')') = '';
 teamStr(teamStr == '&') = '';
+teamStr(teamStr == '''') = '';
 
 %%
 end

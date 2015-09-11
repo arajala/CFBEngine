@@ -1,5 +1,6 @@
-Purdue,Marshall,31,41
-Ohio State,Virginia Tech,NA,NA
+TCU,Minnesota,23,17
+Alcorn State,Georgia Tech,6,69
+UTSA,Arizona,32,42
 Colorado,Hawaii,20,28
 FIU,UCF,15,14
 North Carolina,South Carolina,13,17
@@ -7,39 +8,47 @@ Elon,Wake Forest,3,41
 Oklahoma State,Cent. Michigan,24,13
 VMI,Ball State,36,48
 Villanova,Connecticut,15,20
-Alcorn State,Georgia Tech,6,69
 Western Ky.,Vanderbilt,14,12
 Michigan,Utah,17,24
 Ohio,Idaho,45,28
-TCU,Minnesota,23,17
 Southern Utah,Utah State,9,12
 Duke,Tulane,37,7
 New Hampshire,San Jose State,13,43
-UTSA,Arizona,32,42
 UC Davis,Nevada,17,31
 Abilene Christian,Fresno State,13,34
 Stony Brook,Toledo,NA,NA
-Charlotte,Georgia State,23,20
 Baylor,SMU,56,21
+Michigan State,Western Mich.,37,24
+Washington,Boise State,13,16
+Charlotte,Georgia State,23,20
 Fordham,Army,37,35
 Rhode Island,Syracuse,0,47
-Michigan State,Western Mich.,37,24
 Weber State,Oregon State,7,26
 Kent State,Illinois,3,52
-Washington,Boise State,13,16
+Wisconsin,Alabama,17,35
+Louisville,Auburn,24,31
+Eastern Wash.,Oregon,42,61
+Arkansas State,USC,6,55
 La.-Monroe,Georgia,14,51
+Texas State,Florida State,16,59
+Texas,Notre Dame,3,38
+Wofford,Clemson,10,49
+Virginia,UCLA,16,34
+Arizona State,Texas A&M,17,38
+Tennessee-Martin,Mississippi,3,76
+UTEP,Arkansas,13,48
+Akron,Oklahoma,3,41
+Stanford,Northwestern,6,16
+Southeast Mo. St.,Missouri,3,34
+Bowling Green,Tennessee,30,59
 Colgate,Navy,10,48
 Norfolk State,Rutgers,13,63
-Stanford,Northwestern,6,16
 Richmond,Maryland,21,50
 South Dakota St.,Kansas,41,38
 Illinois State,Iowa,14,31
-Tennessee-Martin,Mississippi,3,76
-Wofford,Clemson,10,49
 Youngstown St.,Pittsburgh,37,45
 Maine,Boston College,3,24
 Portland State,Washington St.,24,17
-Louisville,Auburn,24,31
 Howard,Appalachian St.,0,49
 Penn State,Temple,10,27
 Florida Atlantic,Tulsa,44,47
@@ -47,41 +56,32 @@ BYU,Nebraska,33,28
 Wagner,Rice,16,56
 Presbyterian,Miami (Ohio),7,26
 Sam Houston St.,Texas Tech,45,59
-UTEP,Arkansas,13,48
 Morgan State,Air Force,7,63
 Old Dominion,Eastern Mich.,38,34
 Albany,Buffalo,14,51
-Virginia,UCLA,16,34
 Southern Ill.,Indiana,47,48
-Bowling Green,Tennessee,30,59
 Savannah State,Colorado State,13,65
 North Dakota,Wyoming,24,13
-Southeast Mo. St.,Missouri,3,34
 Grambling,California,14,73
 Troy,NC State,21,49
 Towson,East Carolina,20,28
 Gardner-Webb,South Alabama,23,33
 Bethune-Cookman,Miami (Fla.),0,45
 Missouri State,Memphis,7,63
-Arizona State,Texas A&M,17,38
 Alabama A&M,Cincinnati,10,52
 La.-Lafayette,Kentucky,33,40
 Southern Univ.,Louisiana Tech,15,62
-Akron,Oklahoma,3,41
 Miss. Valley St.,New Mexico,0,66
 Florida A&M,South Florida,3,51
 Jackson State,Middle Tenn.,14,70
 South Dakota,Kansas State,0,34
 UNLV,Northern Ill.,30,38
-Texas,Notre Dame,3,38
 New Mexico St.,Florida,13,61
 Ga. Southern,West Virginia,0,44
-Wisconsin,Alabama,17,35
 San Diego,San Diego State,3,37
 UNI,Iowa State,7,31
-Texas State,Florida State,16,59
-Eastern Wash.,Oregon,42,61
 Tennessee Tech,Houston,24,52
 Mississippi St.,Southern Miss,34,16
-Arkansas State,USC,6,55
 McNeese State,LSU,NA,NA
+Purdue,Marshall,31,41
+Ohio State,Virginia Tech,42,24

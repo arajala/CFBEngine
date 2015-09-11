@@ -6,7 +6,7 @@ function [trimmedStr originalStr] = CFB_trim_stats(originalStr)
 %
 
 %% === HTML markers ===
-statStartMarker = '<td class="yspscores" align="left">';
+statStartMarker = '<td>';
 statEndMarker = '</tr>';
 
 %% === Find the start, or return '' ===
@@ -17,7 +17,7 @@ if isempty(iStart)
 end
 
 %% === Trim and find the end ===
-originalStr = originalStr(iStart+39:end);
+originalStr = originalStr(iStart:end);
 iEnd = strfind(originalStr, statEndMarker);
 if isempty(iEnd)
     iEnd = length(originalStr);
