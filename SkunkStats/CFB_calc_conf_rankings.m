@@ -74,7 +74,7 @@ conferences{11,2} = mean(ranks(iSB,1));
 conferences{11,1} = 'Sun Belt';
 
 %% === Sort and print ===
-conferences = sortrows(conferences, 2);
+conferences = CFB_sort_results(conferences, 2);
 cRanks = '';
 for iConf = 1:11
     cRanks = sprintf('%s%s,%.2f\n', cRanks, conferences{iConf,1}, -1*conferences{iConf,2});
