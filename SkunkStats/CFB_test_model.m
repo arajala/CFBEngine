@@ -11,6 +11,8 @@ if length(testYears) ~= length(testWeeks)
 end
 nTests = length(testYears);
 accuracies = zeros(nTests, 1);
+t_games = 0;
+t_correct = 0;
 for iTest = 1:nTests
 	thisYear = testYears{iTest,1};
 	thisWeek = testWeeks{iTest,1};
@@ -71,7 +73,11 @@ for iTest = 1:nTests
 	end
   accuracies(iTest) = a(1);
 	fclose(fid);
+  t_games = t_games + length(testLabels);
+  t_correct = t_correct + (a(1) * length(testLabels) / 100);
 end
+
+fprintf('Total = %.2f (%d/%d)\n', t_correct/t_games*100, t_correct, t_games);
 
 %%
 end

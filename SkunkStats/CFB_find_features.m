@@ -16,19 +16,19 @@ theseStats = csvread(calcStatsFile);
 if iTeam2 == NOTEAM
     theseStats(iTeam2,:) = zeros(1, size(theseStats,2));
 end
-trainData(1,3) = theseStats(iTeam1,2) / theseStats(iTeam1,1);   % w / gp
+%trainData(1,3) = theseStats(iTeam1,2) / theseStats(iTeam1,1);   % w / gp
 trainData(1,4) = theseStats(iTeam1,4) / theseStats(iTeam1,1);   % mov / gp
 trainData(1,5) = theseStats(iTeam1,5) / (theseStats(iTeam1,5) + theseStats(iTeam1,6));   % opp w / opp gp
 trainData(1,6) = theseStats(iTeam1,7) / (theseStats(iTeam1,7) + theseStats(iTeam1,8));   % opp opp w / opp wopp gp
-trainData(1,7) = theseStats(iTeam1,9) / (theseStats(iTeam1,9) + theseStats(iTeam1,10));   % home w / home gp
-trainData(1,8) = theseStats(iTeam1,11) / (theseStats(iTeam1,11) + theseStats(iTeam1,12)); % road w / road gp
+%trainData(1,7) = theseStats(iTeam1,9) / (theseStats(iTeam1,9) + theseStats(iTeam1,10));   % home w / home gp
+%trainData(1,8) = theseStats(iTeam1,11) / (theseStats(iTeam1,11) + theseStats(iTeam1,12)); % road w / road gp
 trainData(1,9) = theseStats(iTeam1,13) / (theseStats(iTeam1,13) + theseStats(iTeam1,14)); % recent w / recent gp
-trainData(1,10) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
+%trainData(1,10) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
 trainData(1,11) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
 trainData(1,12) = theseStats(iTeam2,5) / (theseStats(iTeam2,5) + theseStats(iTeam2,6));
 trainData(1,13) = theseStats(iTeam2,7) / (theseStats(iTeam2,7) + theseStats(iTeam2,8));
-trainData(1,14) = theseStats(iTeam2,9) / (theseStats(iTeam2,9) + theseStats(iTeam2,10));
-trainData(1,15) = theseStats(iTeam2,11) / (theseStats(iTeam2,11) + theseStats(iTeam2,12));
+%trainData(1,14) = theseStats(iTeam2,9) / (theseStats(iTeam2,9) + theseStats(iTeam2,10));
+%trainData(1,15) = theseStats(iTeam2,11) / (theseStats(iTeam2,11) + theseStats(iTeam2,12));
 trainData(1,16) = theseStats(iTeam2,13) / (theseStats(iTeam2,13) + theseStats(iTeam2,14));
 trainData(trainData ~= trainData) = 0;
 while moreStats
@@ -56,13 +56,6 @@ while moreStats
             trainData(1,20) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
             trainData(1,21) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
             trainData(1,22) = theseStats(iTeam2,4);
-%         case '3rdDownConversionPctDefense'
-%             trainData(1,37) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,38) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,39) = theseStats(iTeam1,4);
-%             trainData(1,40) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,41) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,42) = theseStats(iTeam2,4);
         case '4thDownConversionPct'
             trainData(1,23) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
             trainData(1,24) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
@@ -70,19 +63,6 @@ while moreStats
             trainData(1,26) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
             trainData(1,27) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
             trainData(1,28) = theseStats(iTeam2,4);
-%         case '4thDownConvPctDefense'
-%             trainData(1,49) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,50) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,51) = theseStats(iTeam1,4);
-%             trainData(1,52) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,53) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,54) = theseStats(iTeam2,4);
-%         case 'BlockedKicksAllowed'
-%             trainData(1,55) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,56) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%         case 'BlockedPuntsAllowed'
-%             trainData(1,57) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,58) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
         case 'CompletionPercentage'
             trainData(1,29) = theseStats(iTeam1,4);
             trainData(1,30) = theseStats(iTeam2,4);
@@ -109,13 +89,6 @@ while moreStats
             trainData(1,48) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
             trainData(1,49) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
             trainData(1,50) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
-%         case 'KickoffReturnDefense'
-%             trainData(1,81) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,82) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,83) = theseStats(iTeam1,5);
-%             trainData(1,84) = theseStats(iTeam2,2);
-%             trainData(1,85) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,86) = theseStats(iTeam2,5);
         case 'KickoffReturns'
             trainData(1,51) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
             trainData(1,52) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
@@ -168,13 +141,6 @@ while moreStats
             trainData(1,94) = theseStats(iTeam2,6);
             trainData(1,95) = theseStats(iTeam2,7);
             trainData(1,96) = theseStats(iTeam2,8);
-%         case 'PuntReturnDefense'
-%             trainData(1,133) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,134) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,135) = theseStats(iTeam1,5);
-%             trainData(1,136) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,137) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,138) = theseStats(iTeam2,5);
         case 'PuntReturns'
             trainData(1,97) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
             trainData(1,98) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
@@ -182,32 +148,6 @@ while moreStats
             trainData(1,100) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
             trainData(1,101) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
             trainData(1,102) = theseStats(iTeam2,5);
-%         case 'RedZoneDefense'
-%             trainData(1,145) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,146) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,147) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,148) = theseStats(iTeam1,5) / theseStats(iTeam1,1);
-%             trainData(1,149) = theseStats(iTeam1,6) / theseStats(iTeam1,1);
-%             trainData(1,150) = theseStats(iTeam1,7);
-%             trainData(1,151) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,152) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,153) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,154) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
-%             trainData(1,155) = theseStats(iTeam2,6) / theseStats(iTeam2,1);
-%             trainData(1,156) = theseStats(iTeam2,7);
-%         case 'RedZoneOffense'
-%             trainData(1,157) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,158) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,159) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,160) = theseStats(iTeam1,5) / theseStats(iTeam1,1);
-%             trainData(1,161) = theseStats(iTeam1,6) / theseStats(iTeam1,1);
-%             trainData(1,162) = theseStats(iTeam1,7);
-%             trainData(1,163) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,164) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,165) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,166) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
-%             trainData(1,167) = theseStats(iTeam2,6) / theseStats(iTeam2,1);
-%             trainData(1,168) = theseStats(iTeam2,7);
         case 'RushingDefense'
             trainData(1,103) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
             trainData(1,104) = theseStats(iTeam1,4);
@@ -231,21 +171,6 @@ while moreStats
             trainData(1,120) = theseStats(iTeam1,4);
             trainData(1,121) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
             trainData(1,122) = theseStats(iTeam2,4);
-%         case 'ScoringDefense'
-%             trainData(1,189) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,190) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,191) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,192) = theseStats(iTeam1,5) / theseStats(iTeam1,1);
-%             trainData(1,193) = theseStats(iTeam1,6) / theseStats(iTeam1,1);
-%             trainData(1,194) = theseStats(iTeam1,7) / theseStats(iTeam1,1);
-%             trainData(1,195) = theseStats(iTeam1,9);
-%             trainData(1,196) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,197) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,198) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,199) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
-%             trainData(1,200) = theseStats(iTeam2,6) / theseStats(iTeam2,1);
-%             trainData(1,201) = theseStats(iTeam2,7) / theseStats(iTeam2,1);
-%             trainData(1,202) = theseStats(iTeam2,9);
         case 'ScoringOffense'
             trainData(1,123) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
             trainData(1,124) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
@@ -260,36 +185,12 @@ while moreStats
             trainData(1,133) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
             trainData(1,134) = theseStats(iTeam2,6) / theseStats(iTeam2,1);
             trainData(1,135) = theseStats(iTeam2,7) / theseStats(iTeam2,1);
-            trainData(1,136) = theseStats(iTeam2,9);
-%         case 'TacklesForLossAllowed'
-%             trainData(1,217) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,218) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,219) = theseStats(iTeam1,5) / theseStats(iTeam1,1);
-%             trainData(1,220) = theseStats(iTeam1,6);
-%             trainData(1,221) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,222) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,223) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
-%             trainData(1,224) = theseStats(iTeam2,6);
         case 'TeamPassingEfficiency'
             trainData(1,137) = theseStats(iTeam1,7);
             trainData(1,138) = theseStats(iTeam2,7);
         case 'TeamPassingEfficiencyDefense'
             trainData(1,139) = theseStats(iTeam1,7);
             trainData(1,140) = theseStats(iTeam2,7);
-%         case 'TeamSacks'
-%             trainData(1,229) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,230) = theseStats(iTeam1,4);
-%             trainData(1,231) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,232) = theseStats(iTeam2,4);
-%         case 'TeamTacklesForLoss'
-%             trainData(1,233) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,234) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,235) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,236) = theseStats(iTeam1,6);
-%             trainData(1,237) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,238) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,239) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,240) = theseStats(iTeam2,6);
         case 'TimeOfPossession'
             trainData(1,141) = theseStats(iTeam1,3);
             trainData(1,142) = theseStats(iTeam2,3);
@@ -307,21 +208,6 @@ while moreStats
             trainData(1,152) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
             trainData(1,153) = theseStats(iTeam2,4);
             trainData(1,154) = theseStats(iTeam2,7);
-%         case 'TurnoverMargin'
-%             trainData(1,255) = theseStats(iTeam1,2) / theseStats(iTeam1,1);
-%             trainData(1,256) = theseStats(iTeam1,3) / theseStats(iTeam1,1);
-%             trainData(1,257) = theseStats(iTeam1,4) / theseStats(iTeam1,1);
-%             trainData(1,258) = theseStats(iTeam1,5) / theseStats(iTeam1,1);
-%             trainData(1,259) = theseStats(iTeam1,6) / theseStats(iTeam1,1);
-%             trainData(1,260) = theseStats(iTeam1,7) / theseStats(iTeam1,1);
-%             trainData(1,261) = theseStats(iTeam1,9);
-%             trainData(1,262) = theseStats(iTeam2,2) / theseStats(iTeam2,1);
-%             trainData(1,263) = theseStats(iTeam2,3) / theseStats(iTeam2,1);
-%             trainData(1,264) = theseStats(iTeam2,4) / theseStats(iTeam2,1);
-%             trainData(1,265) = theseStats(iTeam2,5) / theseStats(iTeam2,1);
-%             trainData(1,266) = theseStats(iTeam2,6) / theseStats(iTeam2,1);
-%             trainData(1,267) = theseStats(iTeam2,7) / theseStats(iTeam2,1);
-%             trainData(1,268) = theseStats(iTeam2,9);
         otherwise
             fprintf('Typo: %s\n', thisStatName);
             return
