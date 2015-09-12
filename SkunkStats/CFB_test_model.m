@@ -14,6 +14,10 @@ accuracies = zeros(nTests, 1);
 for iTest = 1:nTests
 	thisYear = testYears{iTest,1};
 	thisWeek = testWeeks{iTest,1};
+  lastWeek = sprintf('%02d', eval(thisWeek) - 1);
+  if eval(lastWeek) == 0
+    lastWeek = '01';
+  end
 	fileName = sprintf('../Scores/Scores-%s-%s.cfb', thisYear, thisWeek);
 	fid = fopen(fileName, 'r');
 	moreScores = true;
@@ -34,7 +38,17 @@ for iTest = 1:nTests
 		iTeam1 = CFB_lookup(team1, thisYear);
 		iTeam2 = CFB_lookup(team2, thisYear);
 		% Get data  features
-		testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, thisYear, thisWeek);
+    if eval(thisWeek) == 1
+      lastYear = sprintf('%d', eval(thisYear)-1);
+      testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, lastYear, '16');
+    elseif eval(thisWeek) < 4
+        lastYear = sprintf('%d', eval(year)-1);
+        preFraction = 1 / eval(week);
+        testData(iGame,:) = preFraction * CFB_find_features(iTeam1, iTeam2, lastYear, '16') + ...
+            (1-preFraction) * CFB_find_features(iTeam1, iTeam2, thisYear, lastWeek);
+    else
+        testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, thisYear, lastWeek);
+    end
 		% Get labels
 		score1 = thisScore(commas(2)+1:commas(3)-1);
 		score2 = thisScore(commas(3)+1:end);

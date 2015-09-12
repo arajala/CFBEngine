@@ -3,7 +3,7 @@ function predictions = CFB_evaluate_week(year, week)
 addpath ../Base
 
 %% === Open predictions file and score file ===
-predFile = sprintf('Predictions-%s-%s_m5.cfb', year, week);
+predFile = sprintf('Predictions-%s-%s.cfb', year, week);
 scoreFile = sprintf('../Scores/Scores-%s-%s.cfb', year, week);
 scoreFid = fopen(scoreFile, 'r');
 
