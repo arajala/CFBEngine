@@ -6,20 +6,20 @@ Northern Ill.,Ohio State,NA,NA
 Mississippi,Alabama,NA,NA
 SMU,TCU,NA,NA
 Air Force,Michigan State,NA,NA
-Auburn,LSU,NA,NA
-Georgia State,Oregon,NA,NA
 Stanford,USC,NA,NA
-Georgia Tech,Notre Dame,NA,NA
 South Carolina,Georgia,NA,NA
+Georgia Tech,Notre Dame,NA,NA
 BYU,UCLA,NA,NA
-Nevada,Texas A&M,NA,NA
-Texas Tech,Arkansas,NA,NA
+Georgia State,Oregon,NA,NA
+Auburn,LSU,NA,NA
 Tulsa,Oklahoma,NA,NA
-Connecticut,Missouri,NA,NA
+Nevada,Texas A&M,NA,NA
 Northern Ariz.,Arizona,NA,NA
-Western Caro.,Tennessee,NA,NA
 Utah,Fresno State,NA,NA
-N'western St.,Mississippi St.,NA,NA
+Connecticut,Missouri,NA,NA
+Northwestern,Duke,NA,NA
+Troy,Wisconsin,NA,NA
+UTSA,Oklahoma State,NA,NA
 UC Davis,Hawaii,NA,NA
 Savannah State,Akron,NA,NA
 Illinois,North Carolina,NA,NA
@@ -29,7 +29,6 @@ Wake Forest,Army,NA,NA
 UNLV,Michigan,NA,NA
 South Florida,Maryland,NA,NA
 Cent. Michigan,Syracuse,NA,NA
-Northwestern,Duke,NA,NA
 Southeastern La.,Ohio,NA,NA
 Rice,North Texas,NA,NA
 Ball State,Eastern Mich.,NA,NA
@@ -38,12 +37,11 @@ Temple,Massachusetts,NA,NA
 Memphis,Bowling Green,NA,NA
 Cincinnati,Miami (Ohio),NA,NA
 East Carolina,Navy,NA,NA
-Troy,Wisconsin,NA,NA
 Nebraska,Miami (Fla.),NA,NA
 Virginia Tech,Purdue,NA,NA
-UTSA,Oklahoma State,NA,NA
 Norfolk State,Marshall,NA,NA
 William & Mary,Virginia,NA,NA
+N'western St.,Mississippi St.,NA,NA
 Austin Peay,Vanderbilt,NA,NA
 Western Ky.,Indiana,NA,NA
 Wofford,Idaho,NA,NA
@@ -54,7 +52,9 @@ Citadel,Ga. Southern,NA,NA
 Southern Miss,Texas State,NA,NA
 Missouri State,Arkansas State,NA,NA
 Murray State,Western Mich.,NA,NA
+Texas Tech,Arkansas,NA,NA
 Colorado,Colorado State,NA,NA
+Western Caro.,Tennessee,NA,NA
 NC State,Old Dominion,NA,NA
 Charlotte,Middle Tenn.,NA,NA
 California,Texas,NA,NA
