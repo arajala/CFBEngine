@@ -16,7 +16,7 @@ t_correct = 0;
 for iTest = 1:nTests
 	thisYear = testYears{iTest,1};
 	thisWeek = testWeeks{iTest,1};
-  lastWeek = sprintf('%02d', eval(thisWeek) - 1);
+	lastWeek = sprintf('%02d', eval(thisWeek) - 1);
   if eval(lastWeek) == 0
     lastWeek = '01';
   end
@@ -41,8 +41,8 @@ for iTest = 1:nTests
 		iTeam2 = CFB_lookup(team2, thisYear);
 		% Get data  features
     if eval(thisWeek) == 1
-      lastYear = sprintf('%d', eval(thisYear)-1);
-      testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, lastYear, '16');
+		lastYear = sprintf('%d', eval(thisYear)-1);
+		testData(iGame,:) = CFB_find_features(iTeam1, iTeam2, lastYear, '16');
     elseif eval(thisWeek) < 4
         lastYear = sprintf('%d', eval(year)-1);
         preFraction = 1 / eval(week);
@@ -71,10 +71,10 @@ for iTest = 1:nTests
 	elseif strcmp(lib, 'liblin')
 		[p a pe] = linpredict(testLabels, sparse(testData), model, '-b 1');
 	end
-  accuracies(iTest) = a(1);
+	accuracies(iTest) = a(1);
 	fclose(fid);
-  t_games = t_games + length(testLabels);
-  t_correct = t_correct + (a(1) * length(testLabels) / 100);
+	t_games = t_games + length(testLabels);
+	t_correct = t_correct + (a(1) * length(testLabels) / 100);
 end
 
 fprintf('Total = %.2f (%d/%d)\n', t_correct/t_games*100, t_correct, t_games);
