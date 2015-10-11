@@ -1,56 +1,56 @@
-Washington,USC,NA,NA
-SMU,Houston,NA,NA
-Southern Miss,Marshall,NA,NA
-NC State,Virginia Tech,NA,NA
-Maryland,Ohio State,NA,NA
-Michigan State,Rutgers,NA,NA
-New Mexico St.,Mississippi,NA,NA
-TCU,Kansas State,NA,NA
-Baylor,Kansas,NA,NA
-Navy,Notre Dame,NA,NA
-Georgia,Tennessee,NA,NA
-LSU,South Carolina,NA,NA
-California,Utah,NA,NA
-Miami (Fla.),Florida State,NA,NA
-Georgia Tech,Clemson,NA,NA
-Arkansas,Alabama,NA,NA
-Oklahoma,Texas,NA,NA
-Northwestern,Michigan,NA,NA
-Wisconsin,Nebraska,NA,NA
-Oklahoma State,West Virginia,NA,NA
-Troy,Mississippi St.,NA,NA
-Florida,Missouri,NA,NA
-San Diego State,Hawaii,NA,NA
-Tulane,Temple,NA,NA
-Illinois,Iowa,NA,NA
-Duke,Army West Point,NA,NA
-UTEP,FIU,NA,NA
-Indiana,Penn State,NA,NA
-Cent. Michigan,Western Mich.,NA,NA
-Middle Tenn.,Western Ky.,NA,NA
-Virginia,Pittsburgh,NA,NA
-Massachusetts,Bowling Green,NA,NA
-Miami (Ohio),Ohio,NA,NA
-Rice,Florida Atlantic,NA,NA
-Wake Forest,Boston College,NA,NA
-Kent State,Toledo,NA,NA
-Akron,Eastern Mich.,NA,NA
-Iowa State,Texas Tech,NA,NA
-Syracuse,South Florida,NA,NA
-Appalachian St.,Georgia State,NA,NA
-Minnesota,Purdue,NA,NA
-Ball State,Northern Ill.,NA,NA
-Connecticut,UCF,NA,NA
-Oregon State,Arizona,NA,NA
-Portland State,North Texas,NA,NA
-Washington St.,Oregon,NA,NA
-La.-Monroe,Tulsa,NA,NA
-Louisiana Tech,UTSA,NA,NA
-Texas State,La.-Lafayette,NA,NA
-New Mexico,Nevada,NA,NA
-Boise State,Colorado State,NA,NA
-East Carolina,BYU,NA,NA
-San Jose State,UNLV,NA,NA
-Colorado,Arizona State,NA,NA
-Wyoming,Air Force,NA,NA
-Utah State,Fresno State,NA,NA
+Washington,USC,17,12
+SMU,Houston,28,49
+Southern Miss,Marshall,10,31
+NC State,Virginia Tech,13,28
+Maryland,Ohio State,28,49
+TCU,Kansas State,52,45
+Baylor,Kansas,66,7
+Michigan State,Rutgers,31,24
+California,Utah,24,30
+Georgia Tech,Clemson,24,43
+LSU,South Carolina,45,24
+Arkansas,Alabama,14,27
+Oklahoma,Texas,17,24
+Florida,Missouri,21,3
+Miami (Fla.),Florida State,24,29
+Northwestern,Michigan,0,38
+New Mexico St.,Mississippi,3,52
+Navy,Notre Dame,24,41
+Georgia,Tennessee,31,38
+Oklahoma State,West Virginia,33,26
+Illinois,Iowa,20,29
+Kent State,Toledo,7,38
+Boise State,Colorado State,41,10
+San Diego State,Hawaii,28,14
+Tulane,Temple,10,49
+Duke,Army West Point,44,3
+UTEP,FIU,12,52
+Indiana,Penn State,7,29
+Cent. Michigan,Western Mich.,39,41
+Middle Tenn.,Western Ky.,28,58
+Virginia,Pittsburgh,19,26
+Massachusetts,Bowling Green,38,62
+Miami (Ohio),Ohio,3,34
+Rice,Florida Atlantic,27,26
+Wake Forest,Boston College,3,0
+Akron,Eastern Mich.,47,21
+Iowa State,Texas Tech,31,66
+Syracuse,South Florida,24,45
+Wisconsin,Nebraska,23,21
+Appalachian St.,Georgia State,37,3
+Minnesota,Purdue,41,13
+Ball State,Northern Ill.,41,59
+Connecticut,UCF,40,13
+Oregon State,Arizona,7,44
+Troy,Mississippi St.,17,45
+Portland State,North Texas,66,7
+Washington St.,Oregon,45,38
+La.-Monroe,Tulsa,24,34
+Louisiana Tech,UTSA,34,31
+Texas State,La.-Lafayette,27,49
+New Mexico,Nevada,17,35
+East Carolina,BYU,38,45
+San Jose State,UNLV,33,27
+Colorado,Arizona State,23,48
+Wyoming,Air Force,17,31
+Utah State,Fresno State,56,14

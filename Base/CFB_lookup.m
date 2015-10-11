@@ -114,6 +114,8 @@ elseif strcmp(teamStr, 'WesternMichigan')
     teamStr = 'WesternMich';
 elseif strcmp(teamStr, 'TexasAamp;M')
     teamStr = 'TexasAM';
+elseif strcmp(teamStr, 'ArmyWestPoint')
+	teamStr = 'Army';
 end
 
 %%
